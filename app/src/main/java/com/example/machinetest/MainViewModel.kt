@@ -104,15 +104,15 @@ class MainViewModel @Inject constructor(
     fun onSelectRoomPref(pref: String) {
         selectedRooPref = pref
         expandRoomPreferenceDropDown = false
-        validateInputs()
+        //validateInputs()
     }
 
     fun onUpdateSpecialRequest(it: String) {
         specialRequest = it
-        validateInputs()
+        //validateInputs()
     }
 
-    private fun validateInputs() {
+    fun validateInputs() {
         when {
             fname.isEmpty() -> {
                 enableSubmit = false
@@ -129,9 +129,6 @@ class MainViewModel @Inject constructor(
             address.isEmpty() -> {
                 enableSubmit = false
             }
-            selectedCountry.isEmpty() -> {
-                enableSubmit = false
-            }
             pincode.isEmpty() -> {
                 enableSubmit = false
             }
@@ -139,9 +136,6 @@ class MainViewModel @Inject constructor(
                 enableSubmit = false
             }
             checkOutDate.isEmpty() -> {
-                enableSubmit = false
-            }
-            selectedRooPref.isEmpty() -> {
                 enableSubmit = false
             }
             else -> {

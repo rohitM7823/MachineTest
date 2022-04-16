@@ -436,6 +436,7 @@ private fun CheckOutCalenderSection(viewModel: MainViewModel) {
         mContext,
         { _: DatePicker, mYear: Int, mMonth: Int, mDayOfMonth: Int ->
             viewModel.checkOutDate = "$mDayOfMonth/${mMonth + 1}/$mYear"
+            viewModel.validateInputs()
         }, mYear, mMonth, mDay
     )
 
@@ -489,6 +490,7 @@ private fun CheckInCalenderSection(viewModel: MainViewModel) {
     val mDatePickerDialog = DatePickerDialog(
         mContext,
         { _: DatePicker, mYear: Int, mMonth: Int, mDayOfMonth: Int ->
+            viewModel.validateInputs()
             viewModel.checkInDate = "$mDayOfMonth/${mMonth + 1}/$mYear"
         }, mYear, mMonth, mDay
     )
